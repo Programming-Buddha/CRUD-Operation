@@ -1,0 +1,81 @@
+.top {
+  
+  
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.flex-container {
+  display: flex;
+  
+}
+
+.image-container {
+  
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.imgClass {
+  width: 200px; /* Adjust the width to your desired size */
+  height: auto; /* Automatically maintain aspect ratio */
+}
+
+
+.signout {
+  margin-left: 1000px;
+  margin-top: 10px;
+  text-align: right;
+  
+}
+
+.signoutbutton {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.row {
+  margin-top: 7px;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.form-floating {
+  margin-bottom: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-warning {
+  color: #ff9800;
+}
+
+.btn-outline-success {
+  color: #4caf50;
+  border-color: #4caf50;
+}
+
+.btn-outline-danger {
+  color: #f44336;
+  border-color: #f44336;
+}
+
+.text-danger {
+  color: #f44336;
+  margin-bottom: 10px;
+}
+.btn-edit {
+  color: #5c36f4;
+  border-color: #5c36f469;
+  margin-left: 20px;
+}

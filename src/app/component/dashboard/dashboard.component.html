@@ -1,0 +1,87 @@
+<div class="top">
+  <div class="flex-container">
+    <div class="image-container">
+      <img src="assets/AH.png" class="imgClass">
+    </div>
+    <div class="signout">
+      <button type="button" class="signoutbutton" (click)="signOut()">Sign Out</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 mt-5">
+    <div class="card border-0 shadow p-3">
+      <div class="form-floating mb-3 tetx-center">
+        <h5 class="text-center text-warning">Enter User Details</h5>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="firstName" name="firstname" [(ngModel)]="first_name">
+        <label for="firstName">First name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="last_name">
+        <label for="lastName">Last name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+        <label for="email">Email address</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="mobile">
+        <label for="mobile">Mobile</label>
+      </div>
+      <button type="button" class="btn btn-outline-success" (click)="addUser()">Add User</button>
+    </div>
+  </div>
+  <div class="col-md-8 mt-2">
+    <div class="card p-3 shadow">
+      <div class="card-body">
+        <h5 class="text-danger">Users List</h5>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let user of usersList">
+              <tr *ngIf="!user.isEditing">
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.mobile}}</td>
+                <td>
+                  <button class="btn btn-outline-danger" (click)="deleteUser(user)">Delete</button>
+                  <button class="btn btn-edit" (click)="editUser(user)">Edit</button>
+                </td>
+              </tr>
+              <tr *ngIf="user.isEditing">
+                <td>
+                  <input type="text" class="form-control" [(ngModel)]="user.first_name">
+                </td>
+                <td>
+                  <input type="text" class="form-control" [(ngModel)]="user.last_name">
+                </td>
+                <td>
+                  <input type="email" class="form-control" [(ngModel)]="user.email">
+                </td>
+                <td>
+                  <input type="text" class="form-control" [(ngModel)]="user.mobile">
+                </td>
+                <td>
+                  <button class="btn btn-outline-danger" (click)="deleteUser(user)">Delete</button>
+                  <button class="btn btn-success" (click)="saveUser(user)">Save</button>
+                  <button class="btn btn-danger" (click)="cancelEdit(user)">Cancel</button>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
